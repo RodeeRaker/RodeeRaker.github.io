@@ -78,22 +78,25 @@ window.addEventListener("scroll", () => {
 });
 
 /* =====================
-   CONTACT FORM
+   CONTACT FORM — opens the visitor's email client with the message pre-filled
    ===================== */
+const CONTACT_EMAIL = "rodeeraker@gmail.com";
+
 function handleForm(e) {
     e.preventDefault();
-    const btn = e.target.querySelector("button[type='submit']");
     const msg = document.getElementById("form-msg");
 
-    btn.disabled = true;
-    btn.textContent = "Sending...";
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value || "Project Inquiry";
+    const message = document.getElementById("message").value;
 
-    setTimeout(() => {
-        msg.textContent = "Message sent! I'll get back to you soon.";
-        msg.style.color = "#16A34A";
-        e.target.reset();
-        btn.disabled = false;
-        btn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane"></i>';
-        setTimeout(() => msg.textContent = "", 5000);
-    }, 1000);
+    const body = `${message}\n\n— ${name} (${email})`;
+    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+
+    msg.textContent = "Opening your email app — just hit send to reach me.";
+    msg.style.color = "#16A34A";
+    setTimeout(() => msg.textContent = "", 6000);
 }
