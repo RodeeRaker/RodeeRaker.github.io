@@ -36,10 +36,9 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <p class="hero-greeting">Hi, I'm</p>
-            <h1 class="hero-name">Rodee Velasquez</h1>
-            <h2 class="hero-role">
-                <span class="role-text" id="role-text"></span><span class="cursor">|</span>
-            </h2>
+            <h1 class="hero-name"><span id="name-text"></span><span class="cursor" id="name-cursor">|</span></h1>
+            <p class="hero-nickname">Goes by <span class="nickname-highlight">Rodee</span></p>
+            <h2 class="hero-role">GoHighLevel Specialist &amp; Automation Engineer</h2>
             <p class="hero-bio">Results-driven Computer Engineering Graduate specializing in CRM automation, workflow development, and web systems. I build scalable business solutions using GoHighLevel, WordPress, and Zapier for US-based clients — remotely from Quezon City, Philippines.</p>
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -52,7 +51,7 @@
         </div>
         <div class="hero-visual">
             <div class="avatar-ring">
-                <div class="avatar-placeholder">RV</div>
+                <img src="assets/rodee-photo.png" alt="John Rodeemer Velasquez" class="avatar-photo">
             </div>
             <div class="floating-badge badge-1"><i class="fa-solid fa-bolt"></i> GoHighLevel</div>
             <div class="floating-badge badge-2"><i class="fa-solid fa-diagram-project"></i> Zapier</div>
@@ -60,6 +59,28 @@
             <div class="floating-badge badge-4"><i class="fa-brands fa-python"></i> Python</div>
         </div>
     </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stats-bar-inner">
+            <div class="stat-block">
+                <span class="stat-num">16</span>
+                <span class="stat-label">Programs Automated</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-num">10+</span>
+                <span class="stat-label">GHL Automations Built</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-num">96.2%</span>
+                <span class="stat-label">AI Model Accuracy (FRAS)</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Remote &amp; Reliable</span>
+            </div>
+        </div>
+    </div>
 
     <!-- ABOUT -->
     <section class="about" id="about">
@@ -69,20 +90,6 @@
                 <h2>GoHighLevel Specialist & Automation Engineer</h2>
                 <p>I'm a results-driven Computer Engineering graduate specializing in CRM automation, workflow development, and web systems. I build scalable business solutions using GoHighLevel, WordPress, and Zapier for US-based clients — remotely from the Philippines.</p>
                 <p>From full CRM infrastructure builds to multi-branch enrollment automations and payment funnels, I turn manual, error-prone processes into reliable systems that run themselves.</p>
-                <div class="about-facts">
-                    <div class="fact">
-                        <h3>16</h3>
-                        <p>Program Pipelines Built</p>
-                    </div>
-                    <div class="fact">
-                        <h3>10+</h3>
-                        <p>Automations Deployed</p>
-                    </div>
-                    <div class="fact">
-                        <h3>100%</h3>
-                        <p>Remote & Reliable</p>
-                    </div>
-                </div>
                 <a href="#contact" class="btn btn-primary">Let's Work Together</a>
             </div>
             <div class="about-card reveal">
@@ -124,14 +131,14 @@
     <section class="experience" id="experience">
         <div class="section-header reveal">
             <p class="section-tag">Career Journey</p>
-            <h2>Experience & Education</h2>
-            <p class="section-desc">From customer support to CRM automation — built on reliability and steady technical growth.</p>
+            <h2>Work Experience</h2>
+            <p class="section-desc">Currently building CRM automation for a US-based client — backed by two years of frontline customer support.</p>
         </div>
         <div class="timeline">
             <div class="timeline-item reveal">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date">2026 — Present</span>
+                    <span class="timeline-date">2026</span>
                     <h3>Virtual Assistant & GoHighLevel Specialist</h3>
                     <p class="timeline-org">US-Based Client · Healthcare Vocational Training · Remote</p>
                     <ul class="timeline-list">
@@ -166,13 +173,17 @@
                     </ul>
                 </div>
             </div>
-            <div class="timeline-item reveal education-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">2022 — 2026</span>
+        </div>
+
+        <div class="education-block reveal">
+            <p class="section-tag education-tag">Education</p>
+            <div class="education-card">
+                <div class="education-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="education-info">
+                    <span class="education-date">2022 — 2026</span>
                     <h3>BS Computer Engineering</h3>
-                    <p class="timeline-org">Polytechnic University of the Philippines · Sta. Mesa, Manila</p>
-                    <ul class="timeline-list">
+                    <p class="education-org">Polytechnic University of the Philippines · Sta. Mesa, Manila</p>
+                    <ul class="education-list">
                         <li>Specializations: Embedded Systems, Machine Learning & Neural Networks, Discrete Mathematics</li>
                         <li>Thesis: FRAS — Facial Recognition Attendance System (~96.2% accuracy at 24–28 FPS)</li>
                     </ul>
@@ -189,8 +200,10 @@
             <p class="section-desc">CRM automation and web systems that keep your business running without manual intervention.</p>
         </div>
         <div class="services-grid">
-            <div class="service-card reveal">
-                <div class="service-icon" style="background:#EEF2FF; color:#6366F1;">
+            <div class="service-card reveal service-indigo">
+                <span class="demand-badge">🔥 High Demand</span>
+                <span class="service-index">01</span>
+                <div class="service-icon">
                     <i class="fa-solid fa-diagram-project"></i>
                 </div>
                 <h3>CRM & Marketing Automation</h3>
@@ -200,9 +213,11 @@
                     <li><i class="fa-solid fa-check"></i> A2P 10DLC & SMS/email campaigns</li>
                     <li><i class="fa-solid fa-check"></i> Zapier multi-step integrations</li>
                 </ul>
+                <div class="service-proof"><i class="fa-solid fa-chart-line"></i> 16 pipelines · 10+ automations shipped</div>
             </div>
-            <div class="service-card reveal">
-                <div class="service-icon" style="background:#F0FFF4; color:#16A34A;">
+            <div class="service-card reveal service-green">
+                <span class="service-index">02</span>
+                <div class="service-icon">
                     <i class="fa-solid fa-credit-card"></i>
                 </div>
                 <h3>Payment & Funnel Systems</h3>
@@ -212,9 +227,11 @@
                     <li><i class="fa-solid fa-check"></i> Multi-branch enrollment logic</li>
                     <li><i class="fa-solid fa-check"></i> CRM migration (e.g. Pipedrive → GHL)</li>
                 </ul>
+                <div class="service-proof"><i class="fa-solid fa-chart-line"></i> 16 checkout pages, zero missed confirmations</div>
             </div>
-            <div class="service-card reveal">
-                <div class="service-icon" style="background:#FDF4FF; color:#9333EA;">
+            <div class="service-card reveal service-purple">
+                <span class="service-index">03</span>
+                <div class="service-icon">
                     <i class="fa-brands fa-wordpress"></i>
                 </div>
                 <h3>Web Development</h3>
@@ -224,9 +241,11 @@
                     <li><i class="fa-solid fa-check"></i> DNS, SPF/DKIM configuration</li>
                     <li><i class="fa-solid fa-check"></i> GHL landing & checkout pages</li>
                 </ul>
+                <div class="service-proof"><i class="fa-solid fa-chart-line"></i> Full DNS migration, zero downtime</div>
             </div>
-            <div class="service-card reveal">
-                <div class="service-icon" style="background:#FFF0E6; color:#EA580C;">
+            <div class="service-card reveal service-orange">
+                <span class="service-index">04</span>
+                <div class="service-icon">
                     <i class="fa-solid fa-list-check"></i>
                 </div>
                 <h3>Virtual Assistance</h3>
@@ -236,6 +255,7 @@
                     <li><i class="fa-solid fa-check"></i> Data entry & research</li>
                     <li><i class="fa-solid fa-check"></i> Google Workspace & Notion</li>
                 </ul>
+                <div class="service-proof"><i class="fa-solid fa-chart-line"></i> Daily EOD reporting, 100% remote reliable</div>
             </div>
         </div>
         <div class="services-tools reveal">
@@ -245,6 +265,7 @@
                 <span><i class="fa-solid fa-diagram-project"></i> Zapier</span>
                 <span><i class="fa-brands fa-stripe-s"></i> Stripe</span>
                 <span><i class="fa-brands fa-wordpress"></i> WordPress</span>
+                <span><i class="fa-solid fa-layer-group"></i> Beaver Builder</span>
                 <span><i class="fa-brands fa-python"></i> Python</span>
                 <span><i class="fa-brands fa-github"></i> GitHub</span>
                 <span><i class="fa-brands fa-google"></i> Google Workspace</span>
@@ -261,80 +282,72 @@
         <div class="section-header reveal">
             <p class="section-tag">What I Do</p>
             <h2>Skills & Technologies</h2>
-            <p class="section-desc">CRM automation, web systems, and applied AI — the full stack behind scalable business solutions.</p>
+            <p class="section-desc">A full-stack automation specialist — from CRM workflows to machine learning pipelines.</p>
         </div>
-        <div class="skills-grid">
-            <div class="skill-card reveal">
-                <div class="skill-icon" style="background: #EEF2FF; color: #6366F1;">
-                    <i class="fa-solid fa-bolt"></i>
-                </div>
-                <h3>GoHighLevel</h3>
-                <p>Pipelines, workflows, funnels, LC Phone, A2P 10DLC, custom fields & tags.</p>
-                <div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
+        <div class="skills-groups">
+            <div class="skill-group reveal">
+                <span class="demand-badge">🔥 High Demand</span>
+                <h3><i class="fa-solid fa-bolt"></i> CRM & Automation</h3>
+                <ul>
+                    <li>GoHighLevel — pipelines, workflows, funnels</li>
+                    <li>LC Phone, A2P 10DLC, SMS/email campaigns</li>
+                    <li>Zapier — multi-step cross-platform zaps</li>
+                    <li>Stripe — checkout & subscription setup</li>
+                    <li>Webhooks & API integrations</li>
+                    <li>Snapshots & sub-account management</li>
+                </ul>
             </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon" style="background: #FFF0E6; color: #EA580C;">
-                    <i class="fa-solid fa-diagram-project"></i>
-                </div>
-                <h3>Zapier</h3>
-                <p>Multi-step automations and cross-platform integrations.</p>
-                <div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
+            <div class="skill-group reveal">
+                <h3><i class="fa-brands fa-wordpress"></i> Web Development</h3>
+                <ul>
+                    <li>WordPress — Beaver Builder, WP Engine</li>
+                    <li>DNS configuration (Cloudflare, HostGator)</li>
+                    <li>HTML/CSS — email templates, landing pages</li>
+                    <li>GHL funnel builder — enrollment & checkout pages</li>
+                    <li>SPF/DKIM/DMARC email authentication</li>
+                </ul>
             </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon" style="background: #F0FFF4; color: #16A34A;">
-                    <i class="fa-brands fa-stripe-s"></i>
-                </div>
-                <h3>Stripe</h3>
-                <p>Payment funnels, subscription setup, checkout configuration.</p>
-                <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+            <div class="skill-group reveal">
+                <h3><i class="fa-solid fa-brain"></i> Machine Learning & AI</h3>
+                <ul>
+                    <li>TensorFlow/Keras — neural network training</li>
+                    <li>InsightFace AI — computer vision / facial recognition</li>
+                    <li>Scikit-learn — SVM, Decision Tree, Random Forest</li>
+                    <li>Ridge, Lasso, ElasticNet regression</li>
+                    <li>Pandas, NumPy, Matplotlib</li>
+                    <li>Claude, ChatGPT, Gemini — AI workflow integration</li>
+                </ul>
             </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon" style="background: #FDF4FF; color: #9333EA;">
-                    <i class="fa-brands fa-wordpress"></i>
-                </div>
-                <h3>WordPress</h3>
-                <p>Beaver Builder, WP Engine, DNS configuration (Cloudflare, HostGator).</p>
-                <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+            <div class="skill-group reveal">
+                <h3><i class="fa-brands fa-python"></i> Software & Programming</h3>
+                <ul>
+                    <li>Python (FastAPI, data processing)</li>
+                    <li>JavaScript / React</li>
+                    <li>SQL / SQLite</li>
+                    <li>Raspberry Pi 5, ESP32, Arduino</li>
+                    <li>Git / GitHub</li>
+                    <li>Jupyter Notebook, Conda</li>
+                </ul>
             </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon" style="background: #F0F9FF; color: #0284C7;">
-                    <i class="fa-brands fa-python"></i>
-                </div>
-                <h3>Python & FastAPI</h3>
-                <p>Backend services, APIs, and data processing with Pandas & NumPy.</p>
-                <div class="skill-bar"><div class="skill-fill" data-width="82%"></div></div>
+            <div class="skill-group reveal">
+                <h3><i class="fa-solid fa-list-check"></i> Productivity & Tools</h3>
+                <ul>
+                    <li>Google Workspace, Microsoft Office</li>
+                    <li>Canva, Adobe Premiere Pro</li>
+                    <li>Trello, Asana, Slack</li>
+                    <li>Loom — documentation & walkthroughs</li>
+                    <li>Relias LMS integration</li>
+                </ul>
             </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon" style="background: #FFF5F5; color: #E11D48;">
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-                <h3>Machine Learning & AI</h3>
-                <p>TensorFlow/Keras, InsightFace (facial recognition, ~96.2% accuracy), Scikit-learn.</p>
-                <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
-            </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon" style="background: #E8F0FF; color: #2563EB;">
-                    <i class="fa-brands fa-react"></i>
-                </div>
-                <h3>React & JavaScript</h3>
-                <p>Interactive UIs and full-stack web apps with SQLite.</p>
-                <div class="skill-bar"><div class="skill-fill" data-width="78%"></div></div>
-            </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon" style="background: #ECFDF5; color: #059669;">
-                    <i class="fa-solid fa-microchip"></i>
-                </div>
-                <h3>IoT & Hardware</h3>
-                <p>Raspberry Pi 5, ESP32, Arduino — embedded systems & custom PCB design.</p>
-                <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
-            </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon" style="background: #FFFCE8; color: #D4A017;">
-                    <i class="fa-solid fa-list-check"></i>
-                </div>
-                <h3>Virtual Assistance</h3>
-                <p>Google Workspace, Microsoft Office, Canva, Notion, Trello, Asana, Slack, Loom, Adobe Premiere Pro.</p>
-                <div class="skill-bar"><div class="skill-fill" data-width="92%"></div></div>
+            <div class="skill-group reveal">
+                <h3><i class="fa-solid fa-comments"></i> Soft Skills</h3>
+                <ul>
+                    <li>Fluent written & spoken English</li>
+                    <li>Proactive communication & EOD reporting</li>
+                    <li>SOP creation & documentation</li>
+                    <li>Independent, self-directed work style</li>
+                    <li>Detail-oriented & deadline-driven</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -348,12 +361,12 @@
         </div>
         <div class="projects-grid">
 
-            <!-- Case Study: Dorson VTI Full Digital Infrastructure Build -->
+            <!-- Case Study: Vocational School Client — Full Digital Infrastructure Build -->
             <div class="case-study reveal">
                 <div class="case-study-header">
                     <div class="case-study-badge">Client — Full Build</div>
-                    <h3>Dorson Vocational Training Institute<br>Full Digital Infrastructure Build</h3>
-                    <p class="case-study-domain"><i class="fa-solid fa-globe"></i> dorsonvti.com</p>
+                    <h3>Healthcare Vocational Training Provider<br>Full Digital Infrastructure Build</h3>
+                    <p class="case-study-domain"><i class="fa-solid fa-graduation-cap"></i> US-based · 16-program vocational school</p>
                     <p class="case-study-intro">End-to-end CRM, automation, and website build for a 16-program healthcare vocational school — from GHL workflow architecture to production WordPress deployment.</p>
                 </div>
                 <div class="case-study-cols">
@@ -388,7 +401,7 @@
                     <div class="case-study-col">
                         <h4><i class="fa-solid fa-flag-checkered"></i> What Was Built</h4>
                         <ul>
-                            <li>Full site live on dorsonvti.com — 16 program pages + supporting pages</li>
+                            <li>Full site live in production — 16 program pages + supporting pages</li>
                             <li>10+ GHL automations: missed call textback, WIOA billing funnel, class started trigger, no-answer flyer delivery, enrollment pipeline</li>
                             <li>Automated Relias LMS onboarding connected to GHL via Zapier</li>
                             <li>Branded HTML email notifications across all payment pathways</li>
@@ -396,6 +409,44 @@
                             <li>Program flyer integration with downloads across all 16 pages</li>
                             <li>Scroll-reveal animation system sitewide</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="case-study-gallery">
+                    <h4><i class="fa-solid fa-images"></i> Automation Screenshots</h4>
+                    <p class="gallery-intro">Here are some examples of automations I've built — a sample from a much larger library of workflows.</p>
+                    <div class="gallery-grid">
+                        <a href="assets/screenshots/relias-enrollment-automation.png" target="_blank" class="gallery-item">
+                            <img src="assets/screenshots/relias-enrollment-automation.png" alt="Relias LMS auto-enrollment workflow in GoHighLevel">
+                            <span class="gallery-caption">Relias LMS Auto-Enrollment — form submission tags the contact, logs a profile note, and fires a webhook to Zapier for automated account creation</span>
+                        </a>
+                        <a href="assets/screenshots/financial-aid-workflow-1.png" target="_blank" class="gallery-item">
+                            <img src="assets/screenshots/financial-aid-workflow-1.png" alt="Financial aid bank application workflow in GoHighLevel">
+                            <span class="gallery-caption">Financial Aid Workflow (Bank Path) — team notification, opportunity creation, loan email, and document submission tracking</span>
+                        </a>
+                        <a href="assets/screenshots/financial-aid-workflow-2.png" target="_blank" class="gallery-item">
+                            <img src="assets/screenshots/financial-aid-workflow-2.png" alt="Financial aid approval branch logic in GoHighLevel">
+                            <span class="gallery-caption">Financial Aid Approval Branch — conditional logic routes approved vs. not-approved applicants into different follow-up sequences</span>
+                        </a>
+                        <a href="assets/screenshots/enrollment-pipeline-trigger.png" target="_blank" class="gallery-item">
+                            <img src="assets/screenshots/enrollment-pipeline-trigger.png" alt="Enrollment pipeline stage trigger workflow in GoHighLevel">
+                            <span class="gallery-caption">Enrollment Pipeline Trigger — fires when a student's pipeline stage changes to Enrolled, sending Relias instructions and waiting for form completion</span>
+                        </a>
+                        <a href="assets/screenshots/enrollment-tracking-branch.png" target="_blank" class="gallery-item">
+                            <img src="assets/screenshots/enrollment-tracking-branch.png" alt="Dual-branch enrollment tracking workflow in GoHighLevel">
+                            <span class="gallery-caption">Enrollment Tracking — dual-branch workflow monitoring Relias registration and enrollment requirement completion in parallel</span>
+                        </a>
+                        <a href="assets/screenshots/training-hours-tracker.png" target="_blank" class="gallery-item">
+                            <img src="assets/screenshots/training-hours-tracker.png" alt="Training hours tracking automation in GoHighLevel">
+                            <span class="gallery-caption">Training Hours Tracker — Zapier-integrated automation that checks completion status (Finished/Ongoing) from submitted training hours</span>
+                        </a>
+                        <a href="assets/screenshots/a2p-compliance-approved.png" target="_blank" class="gallery-item">
+                            <img src="assets/screenshots/a2p-compliance-approved.png" alt="A2P 10DLC compliance approved in GoHighLevel Trust Center">
+                            <span class="gallery-caption">A2P 10DLC Compliance — Approved brand and campaign registration for SMS, plus SHAKEN/STIR and CNAM voice authentication, all handled end-to-end</span>
+                        </a>
+                        <a href="assets/screenshots/wioa-automation.png" target="_blank" class="gallery-item">
+                            <img src="assets/screenshots/wioa-automation.png" alt="WIOA registration acceptance letter automation in GoHighLevel">
+                            <span class="gallery-caption">WIOA Acceptance Letter Automation — 15+ program-specific branches, each auto-generating and sending the correct acceptance letter based on program of interest</span>
+                        </a>
                     </div>
                 </div>
                 <div class="project-links muted-links">
@@ -458,6 +509,41 @@
                 </div>
             </div>
 
+            <!-- Project 4: BEEP Card Fare Calculator (personal project, C++ to web rebuild) -->
+            <div class="project-card reveal">
+                <div class="project-img">
+                    <div class="project-img-placeholder beep-bg">
+                        <span>🚈</span>
+                        <p>BEEP Card</p>
+                    </div>
+                    <div class="project-overlay">
+                        <a href="https://rodeeraker.github.io/beep-fare-calculator/" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
+                        <a href="https://github.com/RodeeRaker/beep-fare-calculator" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                    <div class="project-badge">Personal</div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>C++</span>
+                    </div>
+                    <h3>BEEP Card Fare Calculator</h3>
+                    <p>A web rebuild of my first-year college C++ final project — a Manila Rail (LRT-1, LRT-2, MRT-3) fare simulator with admin login, top-up, and distance-based fare calculation, matching the original program's logic exactly.</p>
+                    <div class="project-links">
+                        <a href="https://rodeeraker.github.io/beep-fare-calculator/" target="_blank"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                        <a href="https://github.com/RodeeRaker/beep-fare-calculator" target="_blank"><i class="fa-brands fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="cta-banner-content reveal">
+            <h2>Ready to automate your business?</h2>
+            <p>Let's build a CRM and workflow system that runs without you having to think about it.</p>
+            <a href="#contact" class="btn btn-cta">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </section>
 

@@ -1,39 +1,20 @@
 /* =====================
-   TYPEWRITER EFFECT
+   TYPEWRITER EFFECT — types the name once, then stops
    ===================== */
-const roles = [
-    "GoHighLevel Specialist",
-    "Automation Engineer",
-    "CRM Architect",
-    "Web Systems Developer"
-];
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const roleEl = document.getElementById("role-text");
+const fullName = "John Rodeemer Velasquez";
+let nameCharIndex = 0;
+const nameEl = document.getElementById("name-text");
+const nameCursorEl = document.getElementById("name-cursor");
 
-function typeWriter() {
-    const current = roles[roleIndex];
-    if (isDeleting) {
-        roleEl.textContent = current.substring(0, charIndex--);
+function typeName() {
+    nameEl.textContent = fullName.substring(0, nameCharIndex++);
+    if (nameCharIndex <= fullName.length) {
+        setTimeout(typeName, 80);
     } else {
-        roleEl.textContent = current.substring(0, charIndex++);
+        setTimeout(() => nameCursorEl.classList.add("cursor-done"), 600);
     }
-
-    let delay = isDeleting ? 60 : 100;
-
-    if (!isDeleting && charIndex === current.length + 1) {
-        delay = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        delay = 400;
-    }
-
-    setTimeout(typeWriter, delay);
 }
-typeWriter();
+typeName();
 
 /* =====================
    HAMBURGER NAV
@@ -65,9 +46,6 @@ window.addEventListener("scroll", () => {
 
     // Reveal
     revealOnScroll();
-
-    // Skill bars (only once)
-    animateSkillBars();
 });
 
 /* =====================
@@ -81,24 +59,6 @@ function revealOnScroll() {
     });
 }
 revealOnScroll();
-
-/* =====================
-   SKILL BARS
-   ===================== */
-let skillsAnimated = false;
-
-function animateSkillBars() {
-    if (skillsAnimated) return;
-    const skillsSection = document.getElementById("skills");
-    if (!skillsSection) return;
-    if (skillsSection.getBoundingClientRect().top < window.innerHeight - 100) {
-        document.querySelectorAll(".skill-fill").forEach(bar => {
-            bar.style.width = bar.dataset.width;
-        });
-        skillsAnimated = true;
-    }
-}
-animateSkillBars();
 
 /* =====================
    ACTIVE NAV LINK
