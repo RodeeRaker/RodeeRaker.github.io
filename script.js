@@ -1,4 +1,16 @@
 /* =====================
+   PAGE LOADER — plays on every load/refresh
+   ===================== */
+document.body.classList.add("loading");
+const pageLoader = document.getElementById("page-loader");
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        pageLoader.classList.add("loader-exit");
+        document.body.classList.remove("loading");
+    }, 1200);
+});
+
+/* =====================
    TYPEWRITER EFFECT — types the name once, then stops
    ===================== */
 const fullName = "John Rodeemer Velasquez";
@@ -52,12 +64,19 @@ window.addEventListener("scroll", () => {
    SCROLL REVEAL
    ===================== */
 function revealOnScroll() {
-    document.querySelectorAll(".reveal:not(.visible)").forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+    document.querySelectorAll(".reveal").forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight - 80 && rect.bottom > 100;
+        const isVisible = el.classList.contains("visible");
+
+        if (inView && !isVisible) {
             const siblings = Array.from(el.parentElement.children).filter(c => c.classList.contains("reveal"));
             const indexAmongSiblings = siblings.indexOf(el);
             el.style.transitionDelay = `${Math.min(indexAmongSiblings, 6) * 0.08}s`;
             el.classList.add("visible");
+        } else if (!inView && isVisible) {
+            el.style.transitionDelay = "0s";
+            el.classList.remove("visible");
         }
     });
 }
