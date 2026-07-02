@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodee Velasquez — Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💻</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <a href="#home" class="nav-logo">Rodee<span>.</span></a>
+        <div class="nav-links" id="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-right">
+            <a href="#contact" class="nav-cta">Hire Me</a>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-greeting">Hi, I'm</p>
+            <h1 class="hero-name">Rodee Velasquez</h1>
+            <h2 class="hero-role">
+                <span class="role-text" id="role-text"></span><span class="cursor">|</span>
+            </h2>
+            <p class="hero-bio">I build clean, functional websites and digital experiences that people love to use. Based in Manila, Philippines.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/RodeeRaker" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="avatar-ring">
+                <div class="avatar-placeholder">RV</div>
+            </div>
+            <div class="floating-badge badge-1"><i class="fa-brands fa-html5"></i> HTML</div>
+            <div class="floating-badge badge-2"><i class="fa-brands fa-css3-alt"></i> CSS</div>
+            <div class="floating-badge badge-3"><i class="fa-brands fa-js"></i> JS</div>
+            <div class="floating-badge badge-4"><i class="fa-solid fa-pen-nib"></i> Design</div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-text reveal">
+                <p class="section-tag">About Me</p>
+                <h2>Passionate developer & designer from the Philippines</h2>
+                <p>I'm a front-end developer and designer who loves crafting beautiful, user-friendly websites. From clean code to polished UI, I bring ideas to life on the web.</p>
+                <p>I started building websites in college and haven't stopped since. I enjoy working on projects that combine good design with solid functionality.</p>
+                <div class="about-facts">
+                    <div class="fact">
+                        <h3>5+</h3>
+                        <p>Projects Built</p>
+                    </div>
+                    <div class="fact">
+                        <h3>2+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="fact">
+                        <h3>100%</h3>
+                        <p>Dedication</p>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+            </div>
+            <div class="about-card reveal">
+                <div class="about-info-card">
+                    <div class="info-row">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <div>
+                            <span class="info-label">Location</span>
+                            <span class="info-value">Manila, Philippines</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <span class="info-label">Email</span>
+                            <span class="info-value">rodeeraker@icloud.com</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <div>
+                            <span class="info-label">Availability</span>
+                            <span class="info-value available">Available for hire</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <div>
+                            <span class="info-label">Education</span>
+                            <span class="info-value">BS Computer Engineering — AI & ML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-header reveal">
+            <p class="section-tag">What I Offer</p>
+            <h2>Services</h2>
+            <p class="section-desc">From websites to admin support — here's how I can help your business grow.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon" style="background:#EEF2FF; color:#6366F1;">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3>Web Design & Development</h3>
+                <p>Custom, responsive websites built from scratch using HTML, CSS, and JavaScript. Clean code, fast loading, mobile-friendly.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-check"></i> Landing pages & portfolios</li>
+                    <li><i class="fa-solid fa-check"></i> UI/UX design & prototyping</li>
+                    <li><i class="fa-solid fa-check"></i> GitHub Pages deployment</li>
+                </ul>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon" style="background:#FDF4FF; color:#9333EA;">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </div>
+                <h3>Graphic Design</h3>
+                <p>Eye-catching visuals for your brand — logos, social media posts, thumbnails, and marketing materials.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-check"></i> Logo & brand identity</li>
+                    <li><i class="fa-solid fa-check"></i> Social media graphics</li>
+                    <li><i class="fa-solid fa-check"></i> Canva & design tools</li>
+                </ul>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon" style="background:#F0FFF4; color:#16A34A;">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <h3>Virtual Assistance</h3>
+                <p>Reliable remote support to keep your business running smoothly — so you can focus on what matters most.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-check"></i> Email & calendar management</li>
+                    <li><i class="fa-solid fa-check"></i> Data entry & research</li>
+                    <li><i class="fa-solid fa-check"></i> Google Workspace & Notion</li>
+                </ul>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon" style="background:#FFF0E6; color:#EA580C;">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <h3>Social Media Management</h3>
+                <p>Consistent, engaging content that builds your online presence and keeps your audience coming back.</p>
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-check"></i> Content planning & scheduling</li>
+                    <li><i class="fa-solid fa-check"></i> Post design & captions</li>
+                    <li><i class="fa-solid fa-check"></i> Instagram, Facebook & TikTok</li>
+                </ul>
+            </div>
+        </div>
+        <div class="services-tools reveal">
+            <p class="tools-label">Tools I work with</p>
+            <div class="tools-list">
+                <span><i class="fa-brands fa-google"></i> Google Workspace</span>
+                <span><i class="fa-solid fa-palette"></i> Canva</span>
+                <span><i class="fa-brands fa-figma"></i> Figma</span>
+                <span><i class="fa-brands fa-github"></i> GitHub</span>
+                <span><i class="fa-solid fa-brain"></i> AI Tools</span>
+                <span><i class="fa-solid fa-table-columns"></i> Notion</span>
+                <span><i class="fa-brands fa-trello"></i> Trello</span>
+                <span><i class="fa-brands fa-slack"></i> Slack</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+        <div class="section-header reveal">
+            <p class="section-tag">What I Do</p>
+            <h2>Skills & Technologies</h2>
+            <p class="section-desc">A well-rounded set of skills covering both design and development.</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card reveal">
+                <div class="skill-icon" style="background: #FFF0E6; color: #E8621A;">
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+                <h3>HTML5</h3>
+                <p>Semantic, accessible markup built to web standards.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon" style="background: #E8F0FF; color: #2563EB;">
+                    <i class="fa-brands fa-css3-alt"></i>
+                </div>
+                <h3>CSS3</h3>
+                <p>Responsive layouts, animations, and modern design systems.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon" style="background: #FFFCE8; color: #D4A017;">
+                    <i class="fa-brands fa-js"></i>
+                </div>
+                <h3>JavaScript</h3>
+                <p>Interactive UIs, DOM manipulation, and vanilla JS apps.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon" style="background: #F0FFF4; color: #16A34A;">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3>Responsive Design</h3>
+                <p>Mobile-first websites that look great on any screen size.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon" style="background: #FDF4FF; color: #9333EA;">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>User-centered interfaces with clean visual hierarchy.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon" style="background: #FFF5F5; color: #E11D48;">
+                    <i class="fa-brands fa-figma"></i>
+                </div>
+                <h3>Graphic Design</h3>
+                <p>Logos, illustrations, and visual assets for digital media.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon" style="background: #F0F9FF; color: #0284C7;">
+                    <i class="fa-brands fa-git-alt"></i>
+                </div>
+                <h3>Git & GitHub</h3>
+                <p>Version control, branching, and deploying with GitHub Pages.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="72%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon" style="background: #ECFDF5; color: #059669;">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h3>Animations & UX</h3>
+                <p>Smooth micro-interactions and CSS/JS animations.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="78%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+        <div class="section-header reveal">
+            <p class="section-tag">My Work</p>
+            <h2>Featured Projects</h2>
+            <p class="section-desc">A selection of projects I've built — from websites to UI designs.</p>
+        </div>
+        <div class="projects-grid">
+
+            <!-- Project 1: Rodee Cafe (real project) -->
+            <div class="project-card reveal featured">
+                <div class="project-img">
+                    <div class="project-img-placeholder cafe-bg">
+                        <span>☕</span>
+                        <p>Rodee Cafe</p>
+                    </div>
+                    <div class="project-overlay">
+                        <a href="https://rodeeraker.github.io/rodee-cafe/" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
+                        <a href="https://github.com/RodeeRaker/rodee-cafe" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                    <div class="project-badge">Featured</div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <h3>Rodee Cafe Website</h3>
+                    <p>A full coffee shop website with a shopping cart, scroll animations, opening hours, mobile-responsive design, and GitHub Pages deployment.</p>
+                    <div class="project-links">
+                        <a href="https://rodeeraker.github.io/rodee-cafe/" target="_blank"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                        <a href="https://github.com/RodeeRaker/rodee-cafe" target="_blank"><i class="fa-brands fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Thesis — FRAS -->
+            <div class="project-card reveal featured">
+                <div class="project-img">
+                    <div class="project-img-placeholder fras-bg">
+                        <span>🤖</span>
+                        <p>FRAS</p>
+                    </div>
+                    <div class="project-overlay">
+                        <span class="project-link"><i class="fa-solid fa-graduation-cap"></i> Thesis Project</span>
+                    </div>
+                    <div class="project-badge thesis-badge">Thesis</div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>Python</span><span>Flask</span><span>React</span><span>AI/ML</span><span>Raspberry Pi</span>
+                    </div>
+                    <h3>Facial Recognition Attendance System</h3>
+                    <p>A production-ready biometric attendance platform built on Raspberry Pi 5. Features real-time face detection at 24–28 FPS with 96.2% accuracy using InsightFace, QR-based batch enrollment, role-based dashboards for admin, faculty & kiosk, and a custom UPS PCB for uninterrupted operation.</p>
+                    <div class="fras-stats">
+                        <div class="fras-stat"><span>96.2%</span><p>Accuracy</p></div>
+                        <div class="fras-stat"><span>24–28</span><p>FPS</p></div>
+                        <div class="fras-stat"><span>3</span><p>Role Dashboards</p></div>
+                    </div>
+                    <div class="project-links muted-links">
+                        <span><i class="fa-solid fa-lock"></i> Academic — Private Repo</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: DVTI GHL Funnel -->
+            <div class="project-card reveal">
+                <div class="project-img">
+                    <div class="project-img-placeholder dvti-bg">
+                        <span>🎓</span>
+                        <p>DVTI</p>
+                    </div>
+                    <div class="project-overlay">
+                        <a href="https://app.gohighlevel.com/v2/preview/kJHpfYdZQfMSC9XG55Na" target="_blank" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview</a>
+                    </div>
+                    <div class="project-badge" style="background:#0D9488;">Client</div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span>GoHighLevel</span><span>Funnel Design</span><span>VA Work</span>
+                    </div>
+                    <h3>Dorson Vocational Training Institute</h3>
+                    <p>A client funnel built on GoHighLevel for a vocational school in New Jersey. Features inquiry & registration forms, a program showcase for Medical Billing and CNA training, financial aid highlights, and a mobile-responsive layout.</p>
+                    <div class="project-links">
+                        <a href="https://app.gohighlevel.com/v2/preview/kJHpfYdZQfMSC9XG55Na" target="_blank" class="live-link"><i class="fa-solid fa-circle live-dot"></i> Live Preview</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-left reveal">
+                <p class="section-tag">Get In Touch</p>
+                <h2>Let's work together</h2>
+                <p>Have a project in mind? Looking to hire a developer or designer? I'd love to hear from you.</p>
+                <div class="contact-details">
+                    <a href="mailto:rodeeraker@icloud.com" class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">rodeeraker@icloud.com</span>
+                        </div>
+                    </a>
+                    <a href="tel:09760027523" class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">09760027523</span>
+                        </div>
+                    </a>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-map-pin"></i></div>
+                        <div>
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Manila, Philippines</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-socials">
+                    <a href="https://github.com/RodeeRaker" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <form class="contact-form reveal" id="contact-form" onsubmit="handleForm(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Project Inquiry">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">
+                    Send Message <i class="fa-solid fa-paper-plane"></i>
+                </button>
+                <p class="form-msg" id="form-msg"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <a href="#home" class="nav-logo">Rodee<span>.</span></a>
+            <p>Built with HTML, CSS & JavaScript — Deployed on GitHub Pages</p>
+            <p class="copyright">© 2025 Rodee Velasquez. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
