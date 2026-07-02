@@ -702,6 +702,91 @@ body {
 }
 .project-card.featured { grid-column: span 2; }
 
+/* Case Study (full-width) */
+.case-study {
+    grid-column: 1 / -1;
+    background: var(--card);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
+    padding: 4rem;
+    transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.case-study:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+}
+.case-study-header { max-width: 720px; margin-bottom: 3.5rem; }
+.case-study-badge {
+    display: inline-block;
+    background: #0D9488;
+    color: #fff;
+    padding: 0.4rem 1.4rem;
+    border-radius: 50px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+}
+.case-study-header h3 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+.case-study-domain {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.4rem;
+}
+.case-study-intro {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+.case-study-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+.case-study-col h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.6rem;
+}
+.case-study-col h4 i { color: var(--accent); font-size: 1.3rem; }
+.case-study-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+.case-study-col ul li {
+    font-size: 1.35rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.case-study-col ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
 .project-img {
     position: relative;
     height: 220px;
