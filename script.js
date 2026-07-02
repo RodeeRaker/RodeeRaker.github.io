@@ -2,10 +2,10 @@
    TYPEWRITER EFFECT
    ===================== */
 const roles = [
-    "Front-End Developer",
-    "UI/UX Designer",
-    "Graphic Designer",
-    "Web Creator"
+    "GoHighLevel Specialist",
+    "Automation Engineer",
+    "CRM Architect",
+    "Web Systems Developer"
 ];
 let roleIndex = 0;
 let charIndex = 0;

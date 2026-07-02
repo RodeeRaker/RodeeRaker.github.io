@@ -637,6 +637,11 @@ body {
 .cafe-bg { background: linear-gradient(135deg, #4A3220, #6F4E37); }
 .fras-bg { background: linear-gradient(135deg, #0F172A, #1E3A5F); }
 .dvti-bg { background: linear-gradient(135deg, #0D4F4A, #0D9488); }
+.wp-bg { background: linear-gradient(135deg, #0D4F4A, #0D9488); }
+.crm-bg { background: linear-gradient(135deg, #0F766E, #14B8A6); }
+.automation-bg { background: linear-gradient(135deg, #6D28D9, #A855F7); }
+.a2p-bg { background: linear-gradient(135deg, #C2410C, #F97316); }
+.stripe-bg { background: linear-gradient(135deg, #4338CA, #6366F1); }
 .placeholder-bg-2 { background: linear-gradient(135deg, #7C3AED, #A855F7); }
 .placeholder-bg-3 { background: linear-gradient(135deg, #0284C7, #38BDF8); }
 
