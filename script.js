@@ -1,52 +1,37 @@
 /* =====================
-   PAGE LOADER — letters scramble into "Rodee", then the dot
-   rolls in Pixar-lamp style and lands as the period
+   PAGE LOADER — "Rodee" fades in, then the dot rolls in
+   Pixar-lamp style and lands as the period (~3s total)
    ===================== */
 document.body.classList.add("loading");
 const pageLoader = document.getElementById("page-loader");
-const scrambleEl = document.getElementById("loader-scramble");
 const loaderLogoEl = document.querySelector(".loader-logo");
 const loaderDotEl = document.querySelector(".loader-dot");
 const loaderFlashEl = document.querySelector(".loader-boom-flash");
-const SCRAMBLE_TARGET = "Rodee";
-const SCRAMBLE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const SCRAMBLE_FRAMES = 24;
-const SCRAMBLE_INTERVAL_MS = 45;
+
+const TEXT_IN_DELAY_MS = 150;
+const PAUSE_BEFORE_ROLL_MS = 250;
 const DOT_ROLL_MS = 900;
+const IMPACT_HOLD_MS = 650;
+const LOADER_EXIT_TRANSITION_MS = 500;
 
-function scrambleTick(frame) {
-    const framesPerLetter = SCRAMBLE_FRAMES / SCRAMBLE_TARGET.length;
-    let display = "";
-    for (let i = 0; i < SCRAMBLE_TARGET.length; i++) {
-        const lockFrame = (i + 1) * framesPerLetter;
-        display += frame >= lockFrame
-            ? SCRAMBLE_TARGET[i]
-            : SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
-    }
-    scrambleEl.textContent = display;
-
-    if (frame < SCRAMBLE_FRAMES) {
-        setTimeout(() => scrambleTick(frame + 1), SCRAMBLE_INTERVAL_MS);
-    } else {
-        scrambleEl.textContent = SCRAMBLE_TARGET;
+setTimeout(() => {
+    loaderLogoEl.classList.add("text-in");
+    setTimeout(() => {
         loaderDotEl.classList.add("rolling");
         setTimeout(() => {
             loaderLogoEl.classList.add("impact");
             loaderFlashEl.classList.add("boom");
+            setTimeout(() => {
+                pageLoader.classList.add("loader-exit");
+                document.body.classList.remove("loading");
+                setTimeout(typeName, LOADER_EXIT_TRANSITION_MS);
+            }, IMPACT_HOLD_MS);
         }, DOT_ROLL_MS);
-    }
-}
-scrambleTick(0);
-
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        pageLoader.classList.add("loader-exit");
-        document.body.classList.remove("loading");
-    }, SCRAMBLE_FRAMES * SCRAMBLE_INTERVAL_MS + DOT_ROLL_MS + 600);
-});
+    }, 400 + PAUSE_BEFORE_ROLL_MS);
+}, TEXT_IN_DELAY_MS);
 
 /* =====================
-   TYPEWRITER EFFECT — types the name once, then stops
+   TYPEWRITER EFFECT — types the name once the loader is gone
    ===================== */
 const fullName = "John Rodeemer Velasquez";
 let nameCharIndex = 0;
@@ -61,7 +46,6 @@ function typeName() {
         setTimeout(() => nameCursorEl.classList.add("cursor-done"), 600);
     }
 }
-typeName();
 
 /* =====================
    HAMBURGER NAV
