@@ -9,7 +9,7 @@ const nameCursorEl = document.getElementById("name-cursor");
 function typeName() {
     nameEl.textContent = fullName.substring(0, nameCharIndex++);
     if (nameCharIndex <= fullName.length) {
-        setTimeout(typeName, 80);
+        setTimeout(typeName, 130);
     } else {
         setTimeout(() => nameCursorEl.classList.add("cursor-done"), 600);
     }
