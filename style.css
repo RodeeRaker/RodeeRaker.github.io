@@ -18,6 +18,7 @@
     --shadow-lg:   0 20px 60px rgba(0,0,0,0.10);
     --ease:        cubic-bezier(0.4, 0, 0.2, 1);
     --radius:      12px;
+    --dot-pattern: radial-gradient(circle, rgba(99,102,241,0.10) 1.2px, transparent 1.2px);
 }
 
 /* =====================
@@ -138,9 +139,9 @@ body {
 .full-width { width: 100%; justify-content: center; }
 
 .demand-badge {
-    display: inline-block;
-    position: relative;
-    margin-bottom: 1.6rem;
+    position: absolute;
+    top: -1.1rem;
+    right: 1.6rem;
     background: linear-gradient(135deg, #F59E0B, #EA580C);
     color: #fff;
     font-size: 1.15rem;
@@ -149,7 +150,7 @@ body {
     border-radius: 50px;
     box-shadow: 0 4px 14px rgba(234,88,12,0.35);
     white-space: nowrap;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* =====================
@@ -368,12 +369,19 @@ body {
     box-shadow: 0 20px 60px rgba(99,102,241,0.25);
     animation: float 4s ease-in-out infinite;
 }
-.avatar-photo {
+.avatar-photo-frame {
     width: 24rem;
     height: 24rem;
     border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;
     border: 4px solid var(--bg);
+}
+.avatar-photo {
+    width: 116%;
+    height: 116%;
+    object-fit: cover;
+    display: block;
+    margin: -8% 0 0 -8%;
 }
 
 /* Floating badges */
@@ -404,7 +412,9 @@ body {
    STATS BAR
    ===================== */
 .stats-bar {
-    background: var(--bg-soft);
+    background-color: var(--bg-soft);
+    background-image: var(--dot-pattern);
+    background-size: 22px 22px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding: 3.5rem 7%;
@@ -434,7 +444,9 @@ body {
 
 .about {
     padding: 9rem 7%;
-    background: var(--bg-soft);
+    background-color: var(--bg-soft);
+    background-image: var(--dot-pattern);
+    background-size: 22px 22px;
 }
 .about-text { flex: 1; }
 .about-text h2 {
@@ -501,7 +513,7 @@ body {
 /* =====================
    EXPERIENCE
    ===================== */
-.experience { padding: 9rem 7%; background: var(--bg); }
+.experience { padding: 9rem 7%; background-color: var(--bg); background-image: var(--dot-pattern); background-size: 22px 22px; }
 .timeline {
     max-width: 820px;
     margin: 0 auto;
@@ -654,7 +666,7 @@ body {
 /* =====================
    SERVICES
    ===================== */
-.services { padding: 9rem 7%; background: var(--bg-soft); }
+.services { padding: 9rem 7%; background-color: var(--bg-soft); background-image: var(--dot-pattern); background-size: 22px 22px; }
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -664,7 +676,6 @@ body {
 }
 .service-card {
     position: relative;
-    overflow: hidden;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -679,6 +690,7 @@ body {
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 4px;
+    border-radius: var(--radius) var(--radius) 0 0;
     background: linear-gradient(90deg, var(--sv-a), var(--sv-b));
 }
 .service-card:hover {
@@ -799,7 +811,7 @@ body {
 /* =====================
    SKILLS
    ===================== */
-.skills { padding: 9rem 7%; background: var(--bg); }
+.skills { padding: 9rem 7%; background-color: var(--bg); background-image: var(--dot-pattern); background-size: 22px 22px; }
 .skills-groups {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -854,7 +866,7 @@ body {
 /* =====================
    PROJECTS
    ===================== */
-.projects { padding: 9rem 7%; background: var(--bg-soft); }
+.projects { padding: 9rem 7%; background-color: var(--bg-soft); background-image: var(--dot-pattern); background-size: 22px 22px; }
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -1239,7 +1251,7 @@ body {
     box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
-.contact { padding: 9rem 7%; background: var(--bg); }
+.contact { padding: 9rem 7%; background-color: var(--bg); background-image: var(--dot-pattern); background-size: 22px 22px; }
 .contact-left { flex: 1; }
 .contact-left h2 {
     font-size: 3.8rem;
@@ -1446,7 +1458,7 @@ body {
     .hero-actions { flex-direction: column; gap: 1rem; }
     .contact-form { padding: 2.5rem; }
     .avatar-ring { width: 20rem; height: 20rem; }
-    .avatar-photo { width: 17rem; height: 17rem; }
+    .avatar-photo-frame { width: 17rem; height: 17rem; }
     .floating-badge { display: none; }
     .timeline-item { padding-left: 4rem; }
     .timeline-content { padding: 2rem 2rem; }

@@ -54,6 +54,9 @@ window.addEventListener("scroll", () => {
 function revealOnScroll() {
     document.querySelectorAll(".reveal:not(.visible)").forEach(el => {
         if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+            const siblings = Array.from(el.parentElement.children).filter(c => c.classList.contains("reveal"));
+            const indexAmongSiblings = siblings.indexOf(el);
+            el.style.transitionDelay = `${Math.min(indexAmongSiblings, 6) * 0.08}s`;
             el.classList.add("visible");
         }
     });
