@@ -1,13 +1,48 @@
 /* =====================
-   PAGE LOADER — plays on every load/refresh
+   PAGE LOADER — letters scramble into "Rodee", then the dot
+   rolls in Pixar-lamp style and lands as the period
    ===================== */
 document.body.classList.add("loading");
 const pageLoader = document.getElementById("page-loader");
+const scrambleEl = document.getElementById("loader-scramble");
+const loaderLogoEl = document.querySelector(".loader-logo");
+const loaderDotEl = document.querySelector(".loader-dot");
+const loaderFlashEl = document.querySelector(".loader-boom-flash");
+const SCRAMBLE_TARGET = "Rodee";
+const SCRAMBLE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const SCRAMBLE_FRAMES = 24;
+const SCRAMBLE_INTERVAL_MS = 45;
+const DOT_ROLL_MS = 900;
+
+function scrambleTick(frame) {
+    const framesPerLetter = SCRAMBLE_FRAMES / SCRAMBLE_TARGET.length;
+    let display = "";
+    for (let i = 0; i < SCRAMBLE_TARGET.length; i++) {
+        const lockFrame = (i + 1) * framesPerLetter;
+        display += frame >= lockFrame
+            ? SCRAMBLE_TARGET[i]
+            : SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+    }
+    scrambleEl.textContent = display;
+
+    if (frame < SCRAMBLE_FRAMES) {
+        setTimeout(() => scrambleTick(frame + 1), SCRAMBLE_INTERVAL_MS);
+    } else {
+        scrambleEl.textContent = SCRAMBLE_TARGET;
+        loaderDotEl.classList.add("rolling");
+        setTimeout(() => {
+            loaderLogoEl.classList.add("impact");
+            loaderFlashEl.classList.add("boom");
+        }, DOT_ROLL_MS);
+    }
+}
+scrambleTick(0);
+
 window.addEventListener("load", () => {
     setTimeout(() => {
         pageLoader.classList.add("loader-exit");
         document.body.classList.remove("loading");
-    }, 1200);
+    }, SCRAMBLE_FRAMES * SCRAMBLE_INTERVAL_MS + DOT_ROLL_MS + 600);
 });
 
 /* =====================
