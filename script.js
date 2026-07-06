@@ -138,6 +138,6 @@ function handleForm(e) {
     window.location.href = mailtoUrl;
 
     msg.textContent = "Opening your email app — just hit send to reach me.";
-    msg.style.color = "#16A34A";
+    msg.style.color = "#34D399";
     setTimeout(() => msg.textContent = "", 6000);
 }
