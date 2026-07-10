@@ -196,6 +196,29 @@ body.loading { overflow: hidden; }
     max-width: 480px;
     margin: 0 auto;
 }
+.project-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.4rem;
+}
+.project-categories span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--card);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+}
+.project-categories span i { color: var(--accent-teal); }
 
 .btn {
     display: inline-flex;
@@ -1172,8 +1195,16 @@ body.loading { overflow: hidden; }
     box-shadow: var(--shadow-lg), 0 0 40px -12px var(--accent);
 }
 .case-study-header { max-width: 720px; margin-bottom: 3.5rem; }
+.case-study-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+}
 .case-study-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: var(--font-mono);
     background: rgba(45,212,191,0.15);
     border: 1px solid rgba(45,212,191,0.35);
@@ -1182,7 +1213,16 @@ body.loading { overflow: hidden; }
     border-radius: 50px;
     font-size: 1.15rem;
     font-weight: 600;
-    margin-bottom: 1.6rem;
+}
+.case-study-badge.tag-tool {
+    background: rgba(99,102,241,0.15);
+    border-color: rgba(99,102,241,0.35);
+    color: var(--accent-bright);
+}
+.case-study-badge.tag-automation {
+    background: rgba(249,115,22,0.15);
+    border-color: rgba(249,115,22,0.35);
+    color: #FB923C;
 }
 .case-study-header h3 {
     font-size: 2.6rem;
@@ -1373,6 +1413,23 @@ body.loading { overflow: hidden; }
 }
 .thesis-badge {
     background: linear-gradient(135deg, #F59E0B, #D97706);
+}
+.category-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(5,7,13,0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* FRAS Stats */
